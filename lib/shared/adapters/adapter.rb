@@ -1,10 +1,11 @@
 require File.dirname(__FILE__) + '/rspec_adapter'
 require File.dirname(__FILE__) + '/cucumber_adapter'
 require File.dirname(__FILE__) + '/test_unit_adapter'
+require File.dirname(__FILE__) + '/test_spec_adapter'
 
 class Adapter
   def self.all
-    [ RSpecAdapter, CucumberAdapter, TestUnitAdapter ]
+    [ RSpecAdapter, CucumberAdapter, TestUnitAdapter, TestSpecAdapter ]
   end
 
   def self.find(type)
@@ -15,6 +16,8 @@ class Adapter
       CucumberAdapter
     when :test
       TestUnitAdapter
+    when :testspec
+      TestSpecAdapter
     else
       raise "Unknown adapter: #{type}"
     end
