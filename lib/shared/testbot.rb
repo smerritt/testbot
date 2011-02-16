@@ -3,7 +3,6 @@ require File.expand_path(File.join(File.dirname(__FILE__), '/adapters/adapter'))
 require 'fileutils'
 
 module Testbot
-  require 'railtie' if defined?(Rails)
 
   # Don't forget to update readme and changelog
   def self.version
